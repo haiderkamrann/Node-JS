@@ -4,14 +4,12 @@ const port = 3000;
 
 app.set("view engine", "ejs");
 
-// Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.render("index");
 });
 
-// Handle the form submission
 app.post("/process-user", (req, res) => {
   res.send(`Name: ${req.body.name} <br> Email: ${req.body.email}`);
 });
